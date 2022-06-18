@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../server.ts"],
+  "sourcesContent": ["import express, { Request, Response } from 'express';\n\nconst app = express()\n\napp.all('/', (req: Request, res: Response) => {\n  return res.send('Sayuri is Alive!')\n})\n\nconst keepAlive = () => {\n  app.listen(3000, () => {\n    console.log('Server is ready.')\n  })\n}\n\nexport default keepAlive"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA,qBAA2C;AAE3C,MAAM,MAAM;AAEZ,IAAI,IAAI,KAAK,CAAC,KAAc,QAAkB;AAC5C,SAAO,IAAI,KAAK;AAAA;AAGlB,MAAM,YAAY,MAAM;AACtB,MAAI,OAAO,KAAM,MAAM;AACrB,YAAQ,IAAI;AAAA;AAAA;AAIhB,IAAO,iBAAQ;",
+  "names": []
+}

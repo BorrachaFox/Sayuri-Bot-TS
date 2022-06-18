@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../index.ts"],
+  "sourcesContent": ["import { Client, Message } from 'discord.js'\nimport keepAlive from './server'\n\nconst client = new Client({ intents: [\"GUILDS\", \"GUILD_MESSAGES\"] })\n\nclient.on('ready', () => {\n  console.log(`Logged in as ${client.user?.tag}`)\n  client.user?.setPresence({\n    activities: [{\n      name: 'Sexo 2'\n    }],\n    status: 'online'\n  })\n})\n\nclient.on('message', async (msg: Message)  => {\n  if (!msg.content.startsWith('!') || msg.author.bot) return\n\n  const text = msg.content.replace('!', '')\n  \n  if (text === \"teste\") {\n    msg.reply(`Salve ${msg.author}`)\n  }\n})\n\nkeepAlive()\nclient.login(process.env.TOKEN)"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA,qBAAgC;AAChC,oBAAsB;AAEtB,MAAM,SAAS,IAAI,sBAAO,EAAE,SAAS,CAAC,UAAU;AAEhD,OAAO,GAAG,SAAS,MAAM;AALzB;AAME,UAAQ,IAAI,gBAAgB,aAAO,SAAP,mBAAa;AACzC,eAAO,SAAP,mBAAa,YAAY;AAAA,IACvB,YAAY,CAAC;AAAA,MACX,MAAM;AAAA;AAAA,IAER,QAAQ;AAAA;AAAA;AAIZ,OAAO,GAAG,WAAW,OAAO,QAAkB;AAC5C,MAAI,CAAC,IAAI,QAAQ,WAAW,QAAQ,IAAI,OAAO;AAAK;AAEpD,QAAM,OAAO,IAAI,QAAQ,QAAQ,KAAK;AAEtC,MAAI,SAAS,SAAS;AACpB,QAAI,MAAM,SAAS,IAAI;AAAA;AAAA;AAI3B;AACA,OAAO,MAAM,QAAQ,IAAI;",
+  "names": []
+}
